@@ -1,0 +1,78 @@
+<%- include("partials/header") -%>
+<div class="profile-bar">
+  <ul>
+    <a href="/logout">
+    <button class="bttn log-out-bttn">Log Out</button>
+  </a>
+    <li>Name : <%=found.name %></li> <br><br>
+    <li>Employee ID : <%= found.id %> </li><br>
+    <!-- <li>Designation : developer</li><br><br> -->
+  </ul>
+</div>
+<div class="db">
+  <h3 class="profile-heading">Database Operations</h3>
+  <div class="database-operations">
+    <a href="#add"><button class="bttn">Add</button></a>
+    <a href="#delete"><button class="bttn">Delete</button></a>
+  </div>
+  <div class="db-operations-styles" id="add">
+    <h3>Add an employee</h3>
+    <form  action="/profile" method="post">
+      <div class="emp_inp">
+        <label for="emp_name">Name:</label><br>
+        <input type="text" name="emp_name" required ><br />
+        <label for="emp_id">ID:</label><br />
+        <input type="text" name="emp_id" required><br />
+        <label for="emp_mail">Email:</label><br />
+        <input type="email" name="emp_mail" required><br />
+        <label for="emp_post">Post:</label><br />
+        <input type="text" name="emp_post" required><br />
+        <label for="emp_dept">Department:</label><br />
+        <input type="text" name="emp_dept" required><br />
+      </div>
+      <div class="emp_inp">
+        <label for="emp_add">Address:</label><br />
+        <input type="text" name="emp_add" required><br />
+        <label for="emp_no">Phone Number:</label><br />
+        <input type="text" name="emp_no" required><br />
+        <label for="emp_sal">Salary:</label><br />
+        <input type="text" name="emp_sal" required><br />
+        <label for="emp_dob">DOB:</label><br />
+        <input type="date" name="emp_dob" required><br />
+        <label for="emp_doj">DOJ:</label><br />
+        <input type="date" name="emp_doj" required><br />
+      </div>
+      <br>
+      <button type="submit" class="bttn">SUBMIT</button>
+    </form>
+  </div>
+  <div class="db-operations-styles" id="delete">
+    <h3>Delete an employee</h3>
+    <form class="" action="/profile/del" method="post" name="del">
+      <div class="emp_inp">
+        <label for="emp_id">ID:</label><br />
+        <input type="text" name="emp_id" required><br />
+      </div>
+      <br>
+      <button type="submit" class="bttn">DELETE</button>
+    </form>
+  </div>
+</div>
+<div class="requests">
+  <div class="request-box">
+    <h3 class="profile-heading">Requests</h3>
+    <a href="/leave"><div class="hr-req">
+      <h3 class="req-links">Leave</h3>
+    </div></a>
+    <a href="/loan"><div class="hr-req">
+      <h3 class="req-links">Loan</h3>
+    </div></a>
+
+    <a href="/others"><div class="hr-req">
+      <h3 class="req-links">Others</h3>
+    </div></a>
+
+  </div>
+</div>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,37 @@
+<%- include("partials/header") -%>
+
+  <% if(auth == false) { %>
+      <div>
+        <h1 id="green-box">Please try again!</h1>
+      </div>
+  <% } %>
+    <div class="sign-in">
+      <form action="/admin/sign_in" method="post">
+        <label for="id" class="login-label">Admin ID</label>
+        <br><br>
+        <input type="text" name="id" required>
+        <br><br><br>
+        <label for="password" class="login-label">Password</label>
+        <br><br>
+        <input type="password" name="password" required>
+        <hr>
+        <button  class="bttn bttn-login" type="submit" >LOG IN</button>
+        <br>
+        <a href="/register" class="not-registered"><p>If not registered, Click Here!</p></a>
+      </form>
+    </div>
+  </div>
+  </body>
+  <footer>
+    <div class="footer footer-signin">
+      <h3>Made by team HFS</h3>
+    </div>
+  </footer>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("green-box").style.display = "none";
+    }, 2000);
+  </script>
+
+  </html>
